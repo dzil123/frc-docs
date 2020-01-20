@@ -5,7 +5,7 @@ Installing LabVIEW for FRC (LabVIEW only)
 
 .. image:: images/labview/ni_logo.png
 
-.. note:: This installation is for teams programming in LabVIEW or using NI Vision Assistant only. C++ and Java teams not using these features do not need to install from the DVD and should proceed to :doc:`Installing the FRC Update Suite </docs/getting-started/getting-started-frc-control-system/frc-update-suite>`.
+.. note:: This installation is for teams programming in LabVIEW or using NI Vision Assistant only. C++ and Java teams not using these features do not need to install from the DVD and should proceed to :doc:`Installing the FRC Game Tools </docs/getting-started/getting-started-frc-control-system/frc-game-tools>`.
 
 Download and installation times will vary widely with computer and internet connection specifications, however note that this process involves a large file download and installation and will likely take at least an hour to complete.
 
@@ -23,18 +23,20 @@ Select Components to Uninstall
 
 In the dialog box that appears, select all entries. The easiest way to do this is to de-select the "Products Only" check-box and select the check-box to the left of "Name". Click Remove. Wait for the uninstaller to complete and reboot if prompted.
 
+.. warning:: These instructions assume that no other National Instruments software is installed. If you have other National Instruments software installed, it is necessary to uncheck the software that should not be uninstalled.
+
 .. image:: images/labview/uninstall_select_components.png
 
 Getting LabVIEW installer
 -------------------------
 
-Either locate and insert the LabVIEW USB Drive or download the LabVIEW 2020 installer from https://www.ni.com/download/labview-for-frc-18.0/7841/en/
+Either locate and insert the LabVIEW USB Drive or download the LabVIEW 2020 installer from https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html
 
-.. note:: Beta teams will download LabVIEW from teamforge.
+.. image:: images/labview/offline-installer.png
 
-If downloaded, right click on the downloaded file (LabVIEW_Software_for_FRC_2020.zip) and select Extract All.
+If you wish to install on other machines offline, do not click the Download button, click **Individual Offline Installers** and then click Download, to download the full installer.
 
-.. note:: This is a large download (~7GB). It is recommended to use a fast internet connection and to use the NI Downloader to allow the download to resume if interrupted.
+.. note:: This is a large download (~8GB). It is recommended to use a fast internet connection and to use the NI Downloader to allow the download to resume if interrupted.
 
 Installing LabVIEW
 ------------------
@@ -46,9 +48,30 @@ Teams are permitted to install the software on as many team computers as needed,
 Welcome
 ^^^^^^^
 
-.. image:: images/labview/labview_welcome.png
+Starting Install
+^^^^^^^^^^^^^^^^
 
-Double click on ``autorun.exe`` to launch the installer. If prompted to allow changes click Yes. To install LabVIEW to program your FRC\ |reg| robot, click the top option Install Everything for LabVIEW Development. If prompted with any Windows security warnings, click Allow or Yes.
+.. tabs::
+  .. tab:: Online Installer
+
+     Run the downloaded exe file to start the install process. Click “Yes” if a Windows Security prompt
+
+  .. tab:: Offline Installer (Windows 10)
+
+     Right click on the downloaded iso file and select mount. Run install.exe from the mounted iso. Click “Yes” if a Windows Security prompt
+
+     .. note:: other installed programs may associate with iso files and the mount option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions in the "Offline Installer (Windows 7, 8, & 8.1)" tab.
+
+     .. image:: images/labview/mount-iso.png
+
+  .. tab:: Offline Installer (Windows 7, 8, & 8.1)
+
+     Install 7-Zip (download `here <https://www.7-zip.org>`__). As of the writing of this document, the current released version is 19.00 (2019-02-21).
+     Right click on the downloaded iso file and select Extract to.
+
+     .. image:: images/labview/extract-iso.png
+
+     Run install.exe from the extracted folder. Click “Yes” if a Windows Security prompt Click “Yes” if a Windows Security prompt appears.
 
 NI Package Manager License
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -159,5 +182,4 @@ Restart
 .. image:: images/labview/labview_restart.png
 
 Select "Reboot Now" after closing any open programs.
-
 

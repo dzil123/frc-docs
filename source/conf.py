@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'FIRST Robotics Competition'
-copyright = '2019, FIRST'
+copyright = '2020, FIRST'
 author = 'WPILib'
 version = '2020'
 
@@ -35,7 +35,8 @@ extensions = [
     'sphinx.ext.graphviz',
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.ghcontributors',
-    'sphinxcontrib.remoteliteralinclude'
+    'sphinxcontrib.remoteliteralinclude',
+    'notfound.extension'
 ]
 
 # TODO Directives omit a warning
@@ -48,7 +49,7 @@ todo_include_todos = False
 linkcheck_anchors = False
 
 # Linkcheck Exclusions
-linkcheck_ignore = [r'.*kauailabs.com.*']
+linkcheck_ignore = [r'.*kauailabs.com.*', r'.*frcvision.local.*']
 
 # Sets linkcheck timeout in seconds
 linkcheck_timeout = 5
@@ -63,7 +64,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['.png', '.jpg']
+exclude_patterns = ['.png', '.jpg', 'docs/beta/*']
 
 # Specify the master doc file, AKA our homepage
 master_doc = "index"
@@ -103,6 +104,10 @@ def setup(app):
 # -- Options for latex generation --------------------------------------------
 
 latex_engine = 'xelatex'
+
+# Disable xindy support
+# See: https://github.com/readthedocs/readthedocs.org/issues/5476
+latex_use_xindy = False
 
 latex_elements = {
     'fontpkg': r'''

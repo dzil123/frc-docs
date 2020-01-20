@@ -1,16 +1,16 @@
 PID Control through PIDSubsystems and PIDCommands
 =================================================
 
-.. note:: For a description of the WPILib PID control features used by these command-based wrappers, see :ref:`docs/software/advanced-control/pidcontroller:PID Control in WPILib`.
+.. note:: For a description of the WPILib PID control features used by these command-based wrappers, see :ref:`docs/software/advanced-control/controllers/pidcontroller:PID Control in WPILib`.
 
 .. note:: Unlike the earlier version of ``PIDController``, the 2020 ``PIDController`` class runs *synchronously*, and is not handled in its own thread.  Accordingly, changing its ``period`` parameter will *not* change the actual frequency at which it runs in any of these wrapper classes.  Users should never modify the ``period`` parameter unless they are certain of what they are doing.
 
-One of the most common control algorithms used in FRC is the `PID controller <https://en.wikipedia.org/wiki/PID_controller>`__. WPILib offers its own :ref:`PIDController <docs/software/advanced-control/pidcontroller:PID Control in WPILib>` class to help teams implement this functionality on their robots. To further help teams integrate PID control into a command-based robot project, the command-based library includes two convenience wrappers for the ``PIDController`` class: ``PIDSubsystem``, which integrates the PID controller into a subsystem, and ``PIDCommand``, which integrates the PID controller into a command.
+One of the most common control algorithms used in FRC is the `PID controller <https://en.wikipedia.org/wiki/PID_controller>`__. WPILib offers its own :ref:`PIDController <docs/software/advanced-control/controllers/pidcontroller:PID Control in WPILib>` class to help teams implement this functionality on their robots. To further help teams integrate PID control into a command-based robot project, the command-based library includes two convenience wrappers for the ``PIDController`` class: ``PIDSubsystem``, which integrates the PID controller into a subsystem, and ``PIDCommand``, which integrates the PID controller into a command.
 
 PIDSubsystems
 -------------
 
-The ``PIDSubsystem`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1PIDSubsystem.html>`__) allows users to conveniently create a subsystem with a built-in ``PIDController``.  In order to use the ``PIDSubsystem`` class, users must create a subclass of it.
+The ``PIDSubsystem`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1PIDSubsystem.html>`__) allows users to conveniently create a subsystem with a built-in ``PIDController``.  In order to use the ``PIDSubsystem`` class, users must create a subclass of it.
 
 Creating a PIDSubsystem
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -127,9 +127,9 @@ Using a ``PIDSubsystem`` with commands can be very simple:
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/RobotContainer.java
       :language: java
-      :lines: 86-92
+      :lines: 85-91
       :linenos:
-      :lineno-start: 86
+      :lineno-start: 85
 
   .. group-tab:: C++ (Header)
 
@@ -249,9 +249,9 @@ And, for an :ref:`inlined <docs/software/commandbased/convenience-features:Inlin
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/RobotContainer.java
       :language: java
-      :lines: 71-83
+      :lines: 70-81
       :linenos:
-      :lineno-start: 71
+      :lineno-start: 70
 
   .. group-tab:: C++
 

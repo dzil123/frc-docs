@@ -1,18 +1,18 @@
 Combining Motion Profiling and PID in Command-Based
 ===================================================
 
-.. note:: For a description of the WPILib PID control features used by these command-based wrappers, see :ref:`docs/software/advanced-control/pidcontroller:PID Control in WPILib`.
+.. note:: For a description of the WPILib PID control features used by these command-based wrappers, see :ref:`docs/software/advanced-control/controllers/pidcontroller:PID Control in WPILib`.
 
 .. note:: Unlike the earlier version of ``PIDController``, the 2020 ``ProfiledPIDController`` class runs *synchronously*, and is not handled in its own thread.  Accordingly, changing its ``period`` parameter will *not* change the actual frequency at which it runs in any of these wrapper classes.  Users should never modify the ``period`` parameter unless they are certain of what they are doing.
 
-A common FRC controls solution is to pair a trapezoidal motion profile for setpoint generation with a PID controller for setpoint tracking.  To facilitate this, WPILib includes its own :ref:`ProfiledPIDController <docs/software/advanced-control/profiled-pidcontroller:Combining Motion Profiling and PID Control with ProfiledPIDController>` class.  To further aid teams in integrating this functionality into their robots, the command-based framework contains two convenience wrappers for the ``ProfiledPIDController`` class: ``ProfiledPIDSubsystem``, which integrates the controller into a subsystem, and ``ProfiledPIDCommand``, which integrates the controller into a command.
+A common FRC controls solution is to pair a trapezoidal motion profile for setpoint generation with a PID controller for setpoint tracking.  To facilitate this, WPILib includes its own :ref:`ProfiledPIDController <docs/software/advanced-control/controllers/profiled-pidcontroller:Combining Motion Profiling and PID Control with ProfiledPIDController>` class.  To further aid teams in integrating this functionality into their robots, the command-based framework contains two convenience wrappers for the ``ProfiledPIDController`` class: ``ProfiledPIDSubsystem``, which integrates the controller into a subsystem, and ``ProfiledPIDCommand``, which integrates the controller into a command.
 
 ProfiledPIDSubsystem
 --------------------
 
 .. note:: In C++, the ``ProfiledPIDSubsystem`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
-The ``ProfiledPIDSubsystem`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ProfiledPIDSubsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ProfiledPIDSubsystem.html>`__) allows users to conveniently create a subsystem with a built-in PIDController.  In order to use the ``ProfiledPIDSubsystem`` class, users must create a subclass of it.
+The ``ProfiledPIDSubsystem`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/ProfiledPIDSubsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1ProfiledPIDSubsystem.html>`__) allows users to conveniently create a subsystem with a built-in PIDController.  In order to use the ``ProfiledPIDSubsystem`` class, users must create a subclass of it.
 
 Creating a ProfiledPIDSubsystem
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -148,7 +148,7 @@ ProfiledPIDCommand
 
 .. note:: In C++, the ``ProfiledPIDCommand`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
-The ``ProfiledPIDCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ProfiledPIDCommand.html>`__) allows users to easily create commands with a built-in ProfiledPIDController.  As with ``ProfiledPIDSubsystem``, users can create a ``ProfiledPIDCommmand`` by subclassing the ``ProfiledPIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining it :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
+The ``ProfiledPIDCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1ProfiledPIDCommand.html>`__) allows users to easily create commands with a built-in ProfiledPIDController.  As with ``ProfiledPIDSubsystem``, users can create a ``ProfiledPIDCommmand`` by subclassing the ``ProfiledPIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining it :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
 
 Creating a PIDCommand
 ^^^^^^^^^^^^^^^^^^^^^
